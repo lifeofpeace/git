@@ -1,0 +1,10 @@
+http://gitref.org/zh/basic	basic.html
+http://gitref.org/zh/basic/	basic.html
+http://gitref.org/zh/branching	branching.html
+http://gitref.org/zh/branching/	branching.html
+http://gitref.org/zh/creating	creating.html
+http://gitref.org/zh/creating/	creating.html
+http://gitref.org/zh/inspect	inspect.html
+http://gitref.org/zh/inspect/	inspect.html
+http://gitref.org/zh/remotes	remotes.html
+http://gitref.org/zh/remotes/	remotes.html

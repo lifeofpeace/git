@@ -13,8 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
-		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../css/ie6.css" media="screen" /><![endif]-->
-		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../css/ie.css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../../css/ie6.css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../../css/ie.css" media="screen" /><![endif]-->
 		<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/action.js"></script>
@@ -22,7 +22,7 @@
 	<body>
 
 
-<!-- Copyright ? 2005. Spidersoft Ltd -->
+<!-- Copyright ɠ2005. Spidersoft Ltd -->
 <style>
 A.applink:hover {border: 2px dotted #DCE6F4;padding:2px;background-color:#ffff00;color:green;text-decoration:none}
 A.applink       {border: 2px dotted #DCE6F4;padding:2px;color:#2F5BFF;background:transparent;text-decoration:none}
@@ -41,7 +41,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
 			<div class="grid_12">
 				<ul id="menu">
 					<li><a id="menu_home" href="index.html">参考手册</a></li>
-          <!-- <li><a id="menu_cookbook" href="cookbook.html">Cookbook</a></li> -->
+          <!-- <li><a id="menu_cookbook" href="../cookbook.html">Cookbook</a></li> -->
 					<li><a id="menu_about" href="about.html">关于</a></li>
 					<li>&#167;</li>
 					<li><a href="http://itmyhome.com" target="_blank">麦田技术博客</a></li>
@@ -101,7 +101,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
 
           <!--
           <div class="block">
-            <h3><a href="fixing">Fixing and Changing History</a></h3>
+            <h3><a href="../fixing">Fixing and Changing History</a></h3>
             <ul>
               <li><a href="http://gitref.org/zh/fixing/rebase.html">rebase</a></li>
               <li><a href="http://gitref.org/zh/fixing/revert.html">revert</a></li>
@@ -115,84 +115,124 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
 
       <div class="grid_10 home_box" id="content_box">
         <div class="box">
-  <h2>Git 手册简介</h2>
+  <h2>获取与创建项目</h2>
   <div class="block">
     <p>
-      本站为 Git 参考手册。目的是为学习与记忆 Git 使用中最重要、最普遍的命令提供快速翻阅。
-      这些命令以你可能需要的操作类型划分，并且将提供日常使用中需要的一些常用的命令以及参数。
+      你得先有一个 Git 仓库，才能用它进行操作。仓库是 Git 存放你要保存的快照的数据的地方。
     </p>
-    <p>
-      每个章节都有到下一个章节的链接，所以本手册也可以当作一个入门指导。
-      每个页面还有一个深度 Git 文档阅读的链接，比如官方的使用手册页面或者 <a href="http://git-scm.com/book" target="_blank">《Pro Git》</a>
-      书中的相关章节，以便于你学习了解更多的 Git 命令。首先，我们要从如何以 Git 的思维方式管理源代码开始。
+
+    <p>拥有一个 Git 仓库的途径有两种。在已有的目录中，初始化一个新的，其一。
+      比如一个新的项目，或者一个已存在的项目，但该项目尚未有版本控制。如果你想要复制一份别人的项目，
+      或者与别人合作某个项目，也可以从一个公开的 Git 仓库克隆，其二。本章将对两者都做介绍。
     </p>
   </div>
 </div>
 
 <div class="box">
-  <h2>如何以 Git 的方式思考</h2>
+  <h2>
+    <span class="docs">
+      <a target="new" href="http://git-scm.com/docs/git-init">文档</a> &nbsp;
+      <a target="new" href="http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository#Initializing-a-Repository-in-an-Existing-Directory">书</a>
+    </span>
+    <a name="init">git init</a>
+    <span class="desc">将一个目录初始化为 Git 仓库</span>
+  </h2>
+
   <div class="block">
+  <p>在目录中执行 <code>git init</code>，就可以创建一个 Git 仓库了。比如，我们恰好有个目录，里头有些许文件，如下：
+  </p>
+<pre>
+<b>$ cd konnichiwa</b>
+<b>$ ls</b>
+README   hello.rb
+</pre>
+
     <p>
-      懂得 Git，第一件重要的事情就是要知道它与 Subversion、Perforce 或者任何你用过的版本控制工具都有着很大的差别。
-      通常，忘掉你预想的版本控制方式，改以 Git 的方式思考，能够帮助你更好地学习 Git。
+      在这个项目里头，我们会用各种编程语言写 "Hello World" 实例。
+      到目前为止，我们只有 Ruby 的，不过，这才刚上路嘛。为了开始用 Git 对这个项目作版本控制，我们执行一下 <code>git init</code>。
     </p>
 
-    <p>
-      让我们从头开始。假设你正在设计一个新的源代码管理系统。在你使用某个工具之前，是如何完成基本的源码版本控制工作的呢？
-      十有八九，你只是在项目到达某些阶段的时候，对项目做一份拷贝。
+<pre>
+<b>$ git init</b>
+Initialized empty Git repository in /opt/konnichiwa/.git/
+# 在 /opt/konnichiwa/.git 目录初始化空 Git 仓库完毕。
+</pre>
+
+    <p>现在你可以看到在你的项目目录中有个 <code>.git</code> 的子目录。
+      这就是你的 Git 仓库了，所有有关你的此项目的快照数据都存放在这里。
     </p>
 
-    <pre> $ cp -R project project.bak </pre>
+<pre>
+<b>$ ls -a</b>
+.        ..       .git     README   hello.rb
+</pre>
 
-    <p>
-      这样，你就可以在事情变得一团糟的时候很方便的返回到之前的状态，或者通过对比当前的项目与之前的拷贝，看看自己在之后的工作中，都做了哪些修改。
-    </p>
+  <p>恭喜，现在你就有了一个 Git 仓库的架子，可以开始快照你的项目了。
+  </p>
 
-    <p>
-      如果你有点偏执，你可能会经常作上面说的事情，或许还会给项目拷贝加个日期：
-    </p>
-
-    <pre> $ cp -R project project.2010-06-01.bak </pre>
-
-    <p>
-      如此，你就有了一堆项目在各个阶段的快照，来作比较、查看。使用这种模式，你还可以有效地与人分享项目变更。
-      如果你会在项目到达一定阶段的时候给它打个包，丢到自己的网站上，那其他的开发者们，就能很方便地下载它，做点改动，并给你补丁回馈。
-    </p>
-
-    <pre>
- $ wget http://example.com/project.2010-06-01.zip
- $ unzip project.2010-06-01.zip
- $ cp -R project.2010-06-01 project-my-copy
- $ cd project-my-copy
- $ (做了某些修改)
- $ diff project-my-copy project.2010-06-01 > change.patch
- $ (通过E-mail发送修改补丁)</pre>
-
-    <p>
-      以此方式，原先的开发者就能将其他人的改动应用到他的项目中去，其他开发者也能了解你做的变更。其实这便是许多开源项目采用过多年的协作方式。
-    </p>
-
-    <p>
-      这办法其实很好使，所以假设我们现在想要写个工具，让这个办法更快、更简单。
-      我们与其实现一个工具以记录每个文件的版本，可能不如去实现个工具以使创建、储存项目的快照更加方便，不用每次都去人肉作整个项目的拷贝。
-    </p>
-
-    <p>
-      这就是 Git 的精要所在。你通过 <code>git commit</code>告诉 Git 你想保存一份项目快照，
-      Git 就会为你的项目中的各个文件的当前状态存一份记录。之后，绝大部分的 Git 命令都围绕这些记录展开。
-      比如查看它们的区别（diff），提取它们的内容，等等。
-    </p>
-
-    <center><img src="images/snapshots.png"/></center>
-
-    <p>
-      如果你将 Git 看作一个排序、对比以及合并项目更新的工具，那就容易理解状况和正确做事了。
+    <p class="nutshell">
+      <strong>简而言之</strong>，用 <code>git init</code> 来在目录中创建新的 Git 仓库。
+      你可以在任何时候、任何目录中这么做，完全是本地化的。
     </p>
 
   </div>
 </div>
 
-<p><a href="creating.html">接下来：获取与创建项目&#187;</a></p>
+<div class="box">
+  <h2>
+    <span class="docs">
+      <a target="new" href="http://git-scm.com/docs/git-clone">文档 </a> &nbsp;
+      <a target="new" href="http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository#Cloning-an-Existing-Repository">书</a>
+    </span>
+    <a name="clone">git clone</a>
+    <span class="desc">复制一个 Git 仓库，以上下其手</span>
+  </h2>
+  <div class="block">
+    <p>如果你需要与他人合作一个项目，或者想要复制一个项目，看看代码，你就可以克隆那个项目。
+      执行 <code>git clone [url]</code>，[url] 为你想要复制的项目，就可以了。
+    </p>
+
+<pre>
+<b>$ git clone git://github.com/schacon/simplegit.git</b>
+Initialized empty Git repository in /private/tmp/simplegit/.git/
+remote: Counting objects: 100, done.
+remote: Compressing objects: 100% (86/86), done.
+remote: Total 100 (delta 35), reused 0 (delta 0)
+Receiving objects: 100% (100/100), 9.51 KiB, done.
+Resolving deltas: 100% (35/35), done.
+<b>$ cd simplegit/</b>
+<b>$ ls</b>
+README   Rakefile <span class="blue">lib</span>
+</pre>
+
+    <p>上述操作将复制该项目的全部记录，让你本地拥有这些。并且该操作将拷贝该项目的主分支，
+      使你能够查看代码，或编辑、修改。进到该目录中，你会看到 <code>.git</code> 子目录。
+      所有的项目数据都存在那里。
+    </p>
+
+<pre>
+<b>$ ls -a</b>
+.        ..       <span class="blue">.git</span>     README   Rakefile <span class="blue">lib</span>
+<b>$ cd .git</b>
+<b>$ ls</b>
+HEAD        description <span class="blue">info</span>        packed-refs
+<span class="blue">branches    hooks       logs        refs</span>
+config      index       <span class="blue">objects</span>
+</pre>
+
+    <p>默认情况下，Git 会按照你提供的 URL 所指示的项目的名称创建你的本地项目目录。
+      通常就是该 URL 最后一个 <code>/</code> 之后的任何东西。如果你想要一个不一样的名字，
+      你可以在该命令后加上它，就在那个 URL 后面。
+    </p>
+
+    <p class="nutshell">
+    <strong>简而言之</strong>，使用 <code>git clone</code> 拷贝一个 Git 仓库到本地，让自己能够查看该项目，或者进行修改。
+    </p>
+
+  </div>
+</div>
+
+<p><a href="basic.html">接下来：基本快照 &#187;</a></p>
 
       </div>
 
@@ -203,4 +243,3 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
 <div style="display:none">
 	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254006603'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254006603%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </div>
-

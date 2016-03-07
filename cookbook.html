@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Git 参考手册</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../css/text.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../css/grid.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../css/nav.css" media="screen" />
+		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../css/ie6.css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../css/ie.css" media="screen" /><![endif]-->
+		<script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../js/action.js"></script>
+	</head>
+	<body>
+
+
+<!-- Copyright � 2005. Spidersoft Ltd -->
+<style>
+A.applink:hover {border: 2px dotted #DCE6F4;padding:2px;background-color:#ffff00;color:green;text-decoration:none}
+A.applink       {border: 2px dotted #DCE6F4;padding:2px;color:#2F5BFF;background:transparent;text-decoration:none}
+A.info          {color:#2F5BFF;background:transparent;text-decoration:none}
+A.info:hover    {color:green;background:transparent;text-decoration:underline}
+</style>
+<div style='BORDER: 1px solid #DCE6F4; MARGIN-TOP: 20px; MARGIN-BOTTOM: 20px; MARGIN-LEFT: 5px; MARGIN-RIGHT: 5px; PADDING: 5px; BACKGROUND-COLOR: #eef8ff;line-height:180%; COLOR: #000000; font-family: Arial; font-size: 8pt; width=100%; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr="#FFFFFFFF", EndColorStr="#F2F5FAFF");'>
+This page was saved using <a class="applink" href="http://www.spidersoft.com"><b>WebZIP 7.0.3.1030</b></a> <a class="applink" href="http://www.spidersoft.com"><b>offline browser</b></a>  (Unregistered) on  07/09/15 14:28:11.<br>
+<b>Address:</b> <a class="info" href="http://gitref.org/zh/cookbook.html">http://gitref.org/zh/cookbook.html</a><br>
+<b>Title:</b> Git 参考手册 &nbsp;&bull;&nbsp; <b>Size:</b> 4228 &nbsp;&bull;&nbsp; <b>Last Modified:</b> Sat, 24 Jan 2015 02:52:05 GMT<br></div>
+<!-- /Copyright � 2005. Spidersoft Ltd -->
+
+
+    <div class="container_12">
+
+			<div class="grid_12">
+				<span id="branding">Git 参考手册</span>
+      </div>
+
+			<div class="grid_12">
+				<ul id="menu">
+					<li><a id="menu_home" href="index.html">参考手册</a></li>
+          <!-- <li><a id="menu_cookbook" href="cookbook.html">Cookbook</a></li> -->
+					<li><a id="menu_about" href="about.html">关于</a></li>
+					<li>&#167;</li>
+					<li><a href="https://github.com/git/git-reference">网站源码</a></li>
+        </ul>
+        <br/>
+        &nbsp;
+			</div>
+
+			<div class="grid_2" id="reflist">
+          <div class="block">
+            <h3><a href="creating.html">获取与创建项目</a></h3>
+            <ul>
+              <li><a href="http://gitref.org/zh/creating/#init">init</a></li>
+              <li><a href="http://gitref.org/zh/creating/#clone">clone</a></li>
+            </ul>
+					</div>
+
+          <div class="block">
+            <h3><a href="basic.html">基本的快照</a></h3>
+            <ul>
+              <li><a href="http://gitref.org/zh/basic/#add">add</a></li>
+              <li><a href="http://gitref.org/zh/basic/#status">status</a></li>
+              <li><a href="http://gitref.org/zh/basic/#diff">diff</a></li>
+              <li><a href="http://gitref.org/zh/basic/#commit">commit</a></li>
+              <li><a href="http://gitref.org/zh/basic/#reset">reset</a></li>
+              <li><a href="http://gitref.org/zh/basic/#rm-mv">rm, mv</a></li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3><a href="http://gitref.org/zh/branching">分支与合并</a></h3>
+            <ul>
+              <li><a href="http://gitref.org/zh/branching/#branch">branch</a></li>
+              <li><a href="http://gitref.org/zh/branching/#branch">checkout</a></li>
+              <li><a href="http://gitref.org/zh/branching/#merge">merge</a></li>
+              <li><a href="http://gitref.org/zh/branching/#log">log</a></li>
+              <li><a href="http://gitref.org/zh/branching/#tag">tag</a></li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3><a href="http://gitref.org/zh/remotes">分享与更新项目</a></h3>
+            <ul>
+              <li><a href="http://gitref.org/zh/remotes/#fetch">fetch, pull</a></li>
+              <li><a href="http://gitref.org/zh/remotes/#push">push</a></li>
+              <li><a href="http://gitref.org/zh/remotes/#remote">remote</a></li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3><a href="inspect.html">检查与比较</a></h3>
+            <ul>
+              <li><a href="http://gitref.org/zh/inspect/#log">log</a></li>
+              <li><a href="http://gitref.org/zh/inspect/#diff">diff</a></li>
+            </ul>
+          </div>
+
+          <!--
+          <div class="block">
+            <h3><a href="fixing">Fixing and Changing History</a></h3>
+            <ul>
+              <li><a href="http://gitref.org/zh/fixing/rebase.html">rebase</a></li>
+              <li><a href="http://gitref.org/zh/fixing/revert.html">revert</a></li>
+              <li><a href="http://gitref.org/zh/fixing/checkout.html">checkout</a></li>
+              <li><a href="http://gitref.org/zh/fixing/reset.html">reset</a></li>
+              <li><a href="http://gitref.org/zh/fixing/cherry-pick.html">cherry-pick</a></li>
+            </ul>
+          </div>
+          -->
+			</div>
+
+      <div class="grid_10 home_box" id="content_box">
+        <div class="box">
+  <h2>Git Cookbook</h2>
+  <ul>
+    <li>Revert a file</li>
+    <li>Recover a lost branch</li>
+    <li>Contribute to a project on GitHub</li>
+    <li>Undo a merge</li>
+  </ul>
+</div>
+
+      </div>
+
+			<div class="clear"></div>
+		</div>
+  </body>
+</html>
